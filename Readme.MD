@@ -1,0 +1,21 @@
+# Shell script
+
+**steps:**
+* create repo in Guithub
+* clone repo in local laptop
+* start developing
+* Add the files in temp area
+---
+git add <file-name>
+---
+
+* Commit the changes
+---
+git commit -m "why-you-commited-this"
+---
+* push the changes to Github/Central repo
+
+**naming comnvention: use small case with Hyphons(-). No spaces**
+
+
+

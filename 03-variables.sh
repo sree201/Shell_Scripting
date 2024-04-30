@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Declearing  variable
-PERSON1=Ramesh #no spaace between = and value
-PERSON2=Suresh
+PERSON1=Sachin #no spaace between = and value
+PERSON2=Rahul
 
 #referring variable
 echo "$PERSON1:: Hello $PERSON2 How r u"

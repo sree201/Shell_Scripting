@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Enter the username::"
+#echo "Enter the username::"
 
 read -p "Enter username: " USERNAME
 

@@ -4,7 +4,7 @@
 
 read -p "Enter username: " USERNAME
 
-#read -s USERNAME #here username is variable
+read -s USERNAME #here username is variable
 
 echo "Enter the password::"
 

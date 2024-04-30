@@ -15,3 +15,5 @@ echo "Which user is running the script: $USER"
 echo "HOSTNAME: $HOSTNAME"
 
 echo "Process Id of the present current shell script: $$"
+
+sleep 60

@@ -17,3 +17,6 @@ echo "HOSTNAME: $HOSTNAME"
 echo "Process Id of the present current shell script: $$"
 
 sleep 60
+
+echo "Process ID of last background command: $!"
+

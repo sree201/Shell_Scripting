@@ -34,5 +34,5 @@ VALIDATE $? "installing mysql-selinux.noarch"
 dnf install git -y &>>$LOGFILE
 VALIDATE $? "installing Git"
 
-dnf install some-wrong -y &>>LOGFILE
-VALIDATE $? INSTALLING logfile
+dnf install docker -y &>>$LOGFILE
+VALIDATE $? "installing Docker"

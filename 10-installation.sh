@@ -10,15 +10,15 @@ else
     echo "Your super user"
 fi
  
-dnf install mysql-server -y
+dnf install mysql-selinux.noarch -y
 
 if [ $? -ne 0 ]
 
 then 
-    echo "Installation of mysql-server...FAILURE"
+    echo "Installation of mysql-selinux.noarch...FAILURE"
     exit 1 
 else 
-    echo "Installation of mysql-server...SUCCESS"
+    echo "Installation of mysql-selinux.noarch...SUCCESS"
 fi
 
 dnf install git -y 

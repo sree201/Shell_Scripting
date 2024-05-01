@@ -10,15 +10,15 @@ else
     echo "Your super user"
 fi
  
- dnf install mysql -y
+ dnf install mysql-server -y
 
 if [ $? -ne 0 ]
 
 then 
-    echo "Installation of mysql...FAILURE"
+    echo "Installation of mysql-server...FAILURE"
     exit 1 
 else 
-    echo "Installation of mysql...SUCCESS"
+    echo "Installation of mysql-server...SUCCESS"
 fi
 
 dnf install git -y 

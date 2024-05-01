@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#echo "Enter the username::"
+echo "Enter the username::"
 
-read -p "Enter username: " USERNAME
+read -p "Enter username:: " USERNAME
 
 read -s USERNAME #here username is variable
 

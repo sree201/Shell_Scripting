@@ -10,7 +10,7 @@ else
     echo "Your super user"
 fi
  
- dnf install mysql-server -y
+dnf yum install mysql-server -y
 
 if [ $? -ne 0 ]
 

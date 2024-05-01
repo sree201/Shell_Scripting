@@ -24,4 +24,4 @@ dnf install mysql-selinux.noarch -y
 VALIDATE $? "installing mysql-selinux.noarch"
 
 dnf install git -y 
-VALIDATE $? "installing mysql-selinux.noarch"
+VALIDATE $? "installing Git"

@@ -2,6 +2,15 @@
 
 USERID=$(id -u)
 
+
+if [$USERID -ne 0] #"0" contains username
+then 
+    echo "Install package with root access"
+    exit 1 
+else
+    echo "your super user"
+fi
+
 for i in $0 # Looping all the parameters what you have $i
 do
     ehco "Package to install: $i"

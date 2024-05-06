@@ -33,7 +33,7 @@ do
     then
         echo -e "$i already installed... $Y SKIPPING  -$N"
     else
-        dnf install $i  -y &>>$LOGFILE 2> $ERROR # redirecting the logfile
+        dnf install $i  -y &>>$LOGFILE # redirecting the logfile
         VALIDATE $? "Installation of $i" # Calling "validate" function
     fi
 done

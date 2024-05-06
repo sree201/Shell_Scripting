@@ -20,3 +20,4 @@ sleep 60
 
 echo "Process ID of last background command: $!"
 
+echo  "Special variable for exit status: $?"

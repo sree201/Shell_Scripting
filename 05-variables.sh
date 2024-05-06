@@ -12,3 +12,4 @@ read -s PASSWORD #here password is variable
 
 #echo "username is: $USERNAME, password is: $PASSWORD"
 
+# Read command is use to captures user input and stores it in a variable.

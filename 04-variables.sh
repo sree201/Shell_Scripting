@@ -4,6 +4,8 @@
 PERSON1=$1
 PERSON2=$2
 
+# we can pass the orguments from outside $1 and $2 like this"
+
 #referring variable
 echo "$PERSON1:: Hello $PERSON2 How r u"
 echo "$PERSON2:: Hello $PERSON1 I am good"

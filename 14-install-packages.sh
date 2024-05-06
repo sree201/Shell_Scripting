@@ -5,8 +5,9 @@ USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
-
- echo "Script started executed at: $TIMESTAMP"
+R="\e[31m"
+G="\e[32m"
+N="\e[33m"
 
 VALIDATE(){
     if [ $1 -ne 0 ] # we can pass the orguments from outside $1 / -ne is the expression 

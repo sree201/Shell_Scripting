@@ -4,7 +4,7 @@ USERID=$( id -u )
 TIMESTAMP=$( date +%F-%H-%M-%S )
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
-ERROR=/tmp/$FAILURE.log
+ERROR=/tmp/$ERROR.log
 
 VALIDATE(){
     if [ $1 -ne 0 ] # we can pass the orguments from outside $1 / -ne is the expression 
@@ -29,13 +29,13 @@ for i in $0 #looping all the parameters what you have given "$i"
 do 
     echo "package to install: $i"
     dnf list installed packages $i &>>$LOGFILE
-    dnf list failure packages $i &>>$FAILURE
+    dnf list failure packages $i 2> $ERROR
     # check the exit status "we use if condition" "or we can use Validate function"
     if [ $? -eq 0 ]
     then
         echo -e "$i already installed... $Y SKIPPING  -$N"
     else
-        dnf install $i  -y &>>$LOGFILE &>>$FAILURE # redirecting the logfile
+        dnf install $i  -y &>>$LOGFILE 2> $ERROR # redirecting the logfile
         VALIDATE $? "Installation of $i" # Calling "validate" function
     fi
 done

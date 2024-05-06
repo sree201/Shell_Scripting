@@ -12,4 +12,5 @@ then
     exit 1
 else
     dnf install $i
+fi
 done

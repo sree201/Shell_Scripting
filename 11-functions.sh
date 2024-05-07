@@ -27,12 +27,8 @@ else
     echo "Your super user."
 fi
 
-for i in $0
-do
-    echo "Package to install: $i"
-    dnf list install packages $i -y &>>$LOGFILE
-    VALIDATE $? "installing mysql-selinux.noarch"
+dnf install mysql-selinux.noarch -y &>>$LOGFILE
+VALIDATE $? "installing mysql-selinux.noarch"
 
 dnf install git -y &>>$LOGFILE
 VALIDATE $? "installing Git"
-done

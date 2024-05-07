@@ -28,15 +28,12 @@ else
     echo "you are super user."
 fi
 
-for i in $0 #looping all the parameters what you have given "$i"
-do 
-    echo "package to install: $i"
-    dnf install mysql-selinux.noarch $i -y &>>$LOGFILE  # check the exit status "we use if condition" "or we can use Validate function"
+    echo "package to install"
+    dnf install mysql-selinux.noarch -y &>>$LOGFILE  # check the exit status "we use if condition" "or we can use Validate function"
     if [ $? -eq 0 ]
     then
-        echo -e "$i already installed...$Y SKIPPING  $N"
+        echo -e "already installed...$Y SKIPPING  $N"
     else
-        dnf install git $i -y &>>$LOGFILE # redirecting the logfile
-        VALIDATE $? "Installation of $i" # Calling "validate" function
+        dnf install git -y &>>$LOGFILE # redirecting the logfile
+        VALIDATE $? "Installation of $@" # Calling "validate" function
     fi
-done

@@ -6,7 +6,8 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 R="\e[31m"
 G="\e[32m"
-N="\e[33m"
+Y="\e[33m"
+N="\e[34m"
 
 VALIDATE(){
 if [ $1 -ne 0 ] # we can pass the orguments from outside $1 / -ne is the expression 
@@ -22,7 +23,7 @@ fi
 
 if [ $USERID -ne 0 ] # 0 contains script name
 then 
-    echo "Install package with root access"
+    echo "Please run this script with root user access."
     exit 1 
 else
     echo "your super user"
@@ -31,10 +32,10 @@ fi
 for i in $0 #looping all the parameters what you have given "$i"
 do 
     echo "package to install: $i"
-    dnf list installed packages $i &>>$LOGFILE  # check the exit status "we use if condition" "or we can use Validate function"
+    dnf list installed $i &>>$LOGFILE  # check the exit status "we use if condition" "or we can use Validate function"
     if [ $? -eq 0 ]
     then
-        echo -e "$i already installed... $Y SKIPPING  -$N"
+        echo -e "$i already installed...$Y SKIPPING  $N"
     else
         dnf install $i  -y &>>$LOGFILE # redirecting the logfile
         VALIDATE $? "Installation of $i" # Calling "validate" function

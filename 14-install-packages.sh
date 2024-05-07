@@ -31,12 +31,12 @@ fi
 for i in $0
 do
     echo "package to install: $i"
-    dnf list install $i -y &>>$LOGFILE  # check the exit status "we use if condition" "or we can use Validate function"
+    dnf list install $i &>>$LOGFILE  # check the exit status "we use if condition" "or we can use Validate function"
     if [ $? -eq 0 ]
     then
         echo -e "$i already installed...$Y SKIPPING  $N"
     else
-        dnf install git $i -y &>>$LOGFILE # redirecting the logfile
+        dnf install git $i &>>$LOGFILE # redirecting the logfile
         VALIDATE $? "Installation of $i" # Calling "validate" function
     fi
 done

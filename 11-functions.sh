@@ -31,11 +31,7 @@ for i in $0
 do
     echo "Package to install: $i"
     dnf list install packages $i &>>$LOGFILE
-   if [ $? -eq 0 ]
-    then
-        echo -e "$i already installed... $Y SKIPPING  $N"
-    else
-        dnf install $i  -y &>> $LOGFILE # redirecting the logfile
-        VALIDATE $? "Installation of $i" # Calling "validate" function
-    fi
-done
+    VALIDATE $? "installing mysql-selinux.noarch"
+
+dnf install git -y &>>$LOGFILE
+VALIDATE $? "installing Git"

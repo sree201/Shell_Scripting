@@ -4,14 +4,18 @@ USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[34m"
 
 VALIDATE(){
     if [ $1 -ne 0 ] # we can pass the orguments from outside $1 / -ne is the expression 
     then
-        echo "$2...FAILURE"
+        echo -e "$2...$R FAILURE $N"
         exit 1
     else
-        echo "$2...SUCCESS"
+        echo -e "$2...$G SUCCESS $N"
 fi
 }
 
@@ -22,9 +26,16 @@ then
 else
     echo "Your super user."
 fi
- 
-dnf install mysql-selinux.noarch -y &>>$LOGFILE
-VALIDATE $? "installing mysql-selinux.noarch"
 
-dnf install git -y &>>$LOGFILE
-VALIDATE $? "installing Git"
+for i in $0
+do
+    echo "Package to install: $i"
+    dnf list install packages $i &>>$LOGFILE
+   if [ $? -eq 0 ]
+    then
+        echo -e "$i already installed... $Y SKIPPING  $N"
+    else
+        dnf install $i  -y &>> $LOGFILE # redirecting the logfile
+        VALIDATE $? "Installation of $i" # Calling "validate" function
+    fi
+done

@@ -30,7 +30,7 @@ fi
 for i in $0
 do
     echo "Package to install: $i"
-    dnf list install packages $i &>>$LOGFILE
+    dnf list install packages $i -y &>>$LOGFILE
     VALIDATE $? "installing mysql-selinux.noarch"
 
 dnf install git -y &>>$LOGFILE

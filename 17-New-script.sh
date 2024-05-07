@@ -18,12 +18,12 @@ VALIDATE(){
     fi
 }
 
-if [ $USERID -ne 0 ] #"$0 is contains script name"
+if [ $USERID -ne 0 ]
 then
-    echo "Please run the script with root access."
-    exit 1 #manually exit if error comes / other than 0 we can use any number
+    echo "Please run this script with root access"
+    exit 1
 else
-    echo "you are super user."
+    echo "Running this script as super user"
 fi
 
 for i in $0 #looping all the parameters what you have given "$i"

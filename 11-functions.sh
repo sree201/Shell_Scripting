@@ -35,3 +35,4 @@ do
 
 dnf install git -y &>>$LOGFILE
 VALIDATE $? "installing Git"
+done

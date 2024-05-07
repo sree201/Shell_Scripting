@@ -29,6 +29,7 @@ else
 fi
 
 for i in $0
+do
     echo "package to install: $i"
     dnf list install mysql-selinux.noarch -y &>>$LOGFILE  # check the exit status "we use if condition" "or we can use Validate function"
     if [ $? -eq 0 ]

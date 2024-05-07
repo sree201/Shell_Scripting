@@ -32,8 +32,8 @@ fi
     dnf install mysql-selinux.noarch -y &>>$LOGFILE  # check the exit status "we use if condition" "or we can use Validate function"
     if [ $? -eq 0 ]
     then
-        echo -e "already installed...$Y SKIPPING  $N"
+        echo -e "$i already installed...$Y SKIPPING  $N"
     else
-        dnf install git -y &>>$LOGFILE # redirecting the logfile
+        dnf install git $i -y &>>$LOGFILE # redirecting the logfile
         VALIDATE $? "Installation of $i" # Calling "validate" function
     fi

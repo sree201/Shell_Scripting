@@ -34,7 +34,7 @@ do
     dnf list installed packages $i &>> $LOGFILE  # check the exit status "we use if condition" "or we can use Validate function"
     if [ $? -eq 0 ]
     then
-        echo -e "$i already installed... $Y SKIPPING  -$N"
+        echo -e "$i already installed... $Y SKIPPING  $N"
     else
         dnf install $i  -y &>> $LOGFILE # redirecting the logfile
         VALIDATE $? "Installation of $i" # Calling "validate" function

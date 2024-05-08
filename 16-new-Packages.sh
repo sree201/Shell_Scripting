@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./common.sh
+source ./install-packages.sh
 
 echo "Enter MySQL DB Password:"
 read -s mysql_root_password # ExpenseApp@1
@@ -25,7 +25,6 @@ else
 fi
 
 mkdir -p /app &>> $LOGFILE
-mkdir -p ./common.sh &>> $LOGFILE
 
 curl -o /tmp/backend.zip "https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip" &>> $LOGFILE
 VALIDATE $? "Downloading Source Code"

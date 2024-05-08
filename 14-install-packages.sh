@@ -33,7 +33,7 @@ for i in $0 #looping all the parameters what you have given "$i"
 do
     echo "package to install: $i"
     dnf list install mysql-selinux.noarch $i -y &>>$LOGFILE  # check the exit status "we use if condition" "or we can use Validate function"
-    if [ $? -eq 0 ]
+    if [ $? -eq 0 ] # Special variable for exit status "$?"
     then
         echo -e "$i already installed...$Y SKIPPING  $N"
     else

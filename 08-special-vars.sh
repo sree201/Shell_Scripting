@@ -21,3 +21,5 @@ sleep 60
 echo "Process ID of last background command: $!"
 
 echo "Special variable for exit status: $?"
+
+echo "looping all the parameters what you have given: $i"

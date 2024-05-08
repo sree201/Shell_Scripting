@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./common.sh
+
 echo "Enter MySQL DB Password:"
 read -s mysql_root_password # ExpenseApp@1
 

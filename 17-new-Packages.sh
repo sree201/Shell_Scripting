@@ -1,6 +1,23 @@
 #!/bin/bash
 
-source ./common.sh
+USERID=$(id -u)
+TIMESTAMP=$(date +%F-%H-%M-%S)
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[34m"
+
+VALIDATE(){
+    if [ $1 -ne 0 ] # we can pass the orguments from outside $1 / -ne is the expression 
+    then
+        echo -e "$2...$R FAILURE $N"
+        exit 1
+    else
+        echo -e "$2...$G SUCCESS $N"
+fi
+}
 
 echo "Enter MySQL DB Password:"
 read -s mysql_root_password # ExpenseApp@1

@@ -7,8 +7,8 @@ PERSON2=$2
 # we can pass the orguments from outside $1 and $2 like this"
 
 #referring variable
-echo "$PERSON1:: Hello $PERSON2 How r u"
-echo "$PERSON2:: Hello $PERSON1 I am good"
-echo "$PERSON1:: I am fine $PERSON1 How is your work"
-echo "$PERSON2:: not bad $PERSON2 i am thinking to learn"
-echo "$PERSON1:: I am learning Kubernetes and DevOps project in this using 
+echo "$1:: Hello $2 How r u"
+echo "$2:: Hello $1 I am good"
+echo "$1:: I am fine $1 How is your work"
+echo "$2:: not bad $2 i am thinking to learn"
+echo "$1:: I am learning Kubernetes and DevOps project in this using 
